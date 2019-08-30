@@ -1,4 +1,11 @@
 import checkPropTypes from 'check-prop-types'
+import { createStore } from 'redux'
+
+import rootreducer from '../reducers'
+
+export const storeFactory = initialState => {
+    return createStore(rootreducer, initialState)
+}
 
 export const findByTestAttr = (wrapper, val) => {
     return wrapper.find(`[data-test='${val}']`)
